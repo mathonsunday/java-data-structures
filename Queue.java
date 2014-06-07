@@ -2,18 +2,13 @@ public class Queue {
 	Node first;
 	Node last;
 
-
-	public Queue(Node f, Node l) {
-		first = f;
-		last = l;
+	public Queue(Node first, Node last) {
+		this.first = first;
+		this.last = last;
 		first.next = last;
 	}
 
-	public Queue() {
-		
-	}
-
-	public void enqueue(int data) {
+	public void enqueue(Object data) {
 		if( first == null ) {
 			last = new Node(data);
 			first = last;
@@ -23,14 +18,14 @@ public class Queue {
 		}
 	}
 
-	public int dequeue() {
+	public Object dequeue() {
 		if (first != null) {
-			int item = first.data;
+			Object item = first.data;
 			first = first.next;
 			return item;
 		}
 		else {
-			return -1;
+			return null;
 		}
 	}
 
@@ -44,10 +39,10 @@ public class Queue {
 	}
 
 	private static class Node {
-		int data;
+		Object data;
 		Node next;
 
-		private Node(int d) {
+		private Node(Object d) {
 			data = d;
 		}
 	}
