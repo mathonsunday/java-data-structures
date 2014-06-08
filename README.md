@@ -10,3 +10,7 @@ Stack: adapted from pseudocode in Cracking the Coding Interview
 Queue: adapted from pseudocode in Cracking the Coding Interview
 
 BST
+
+HashTable
+
+Trie
