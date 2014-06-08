@@ -3,9 +3,9 @@
 
 			public Node find(int data) {
 				if(root == null) return null;
+				else if(root.data == data) return root;
 				else {
 					Node parent = findParent(root, data);
-					System.out.println(parent);
 					if(parent.data < data && parent.right != null) return parent.right;
 					else if(parent.data > data && parent.left != null) return parent.left;
 					else return null;
@@ -23,17 +23,16 @@
 				}
 			}
 
-			// public void delete(int data) {
-			// 	Node nodeToDelete = search(root, data);
-			// 	if(nodeToDelete != null) {
-			// 		// parent needs to delete it as a child
-
-			// 	}
-			// }
+			public void delete(int data) {
+				if(root.data == data) root = null;
+				Node parent = findParent(root, data);
+				if (parent.data < data && parent.right != null) parent.right = null;
+				else if (parent.data > data && parent.left != null) parent.left = null;
+				else return;
+			}
 
 			public Node findParent(Node current, int data) {
 				if((current.data < data && current.right == null) || (current.data > data && current.left == null)) {
-					System.out.println(current.data);
 					return current;
 				}
 				else if (current.data < data && current.right != null) return findParent(current.right, data);
@@ -41,20 +40,21 @@
 				else return null;
 			}
 
-			public inOrderTraveral() {
+			// TODO
+			// BFS
+			public void inOrderTraveral() {
 	// Traverse the left subtree.
-				while(current.left != null) System.out.println(current.left.data);
 	// Visit the root.
 	// Traverse the right subtree.
 			}
 
-			public postOrderTraveral() {
+			public void postOrderTraveral() {
 	// Traverse the left subtree.
 	// Traverse the right subtree.
 	// Visit the root.
 			}
 
-			public preOrderTraveral() {
+			public void preOrderTraveral() {
 	// Visit the root.
 	// Traverse the left subtree.
 	// Traverse the right subtree
@@ -63,17 +63,13 @@
 			public static void main(String[] args) {
 				BST bst = new BST();
 				bst.root = new Node(5);
-				// System.out.println(bst.root.data);
-				// bst.insert(1);
-				// bst.insert(2);
-				// bst.insert(6);
-				// bst.insert(7);
-
-				System.out.println(bst.find(5).data == 5);
-
-				// bst.delete(2);
-
-				// System.out.println(bst.find(2).data == null);
+				bst.insert(1);
+				bst.insert(2);
+				bst.insert(6);
+				bst.insert(7);
+				System.out.println(bst.find(5).data);
+				bst.delete(2);
+				System.out.println(bst.find(2)== null);
 			}
 
 			private static class Node {
