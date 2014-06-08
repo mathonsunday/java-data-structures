@@ -1,3 +1,6 @@
+// TODO
+// add generics
+
 public class Queue {
 	Node first;
 	Node last;
@@ -6,6 +9,10 @@ public class Queue {
 		this.first = first;
 		this.last = last;
 		first.next = last;
+	}
+
+	public Queue() {
+
 	}
 
 	public void enqueue(Object data) {
@@ -42,8 +49,8 @@ public class Queue {
 		Object data;
 		Node next;
 
-		private Node(Object d) {
-			data = d;
+		private Node(Object data) {
+			this.data = data;
 		}
 	}
 }

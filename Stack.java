@@ -1,3 +1,6 @@
+	// TODO
+	// add generics
+
 	public class Stack {
 		Node top;
 
