@@ -1,12 +1,13 @@
 	// TODO
 	// add generics
 
-	public class Stack {
+	public class myStack {
 		Node top;
 
 		Object pop() {
 			if (top != null) {
 				Object item = top.data;
+				System.out.println(top.next);
 				top = top.next;
 				return item;
 			}
@@ -27,7 +28,7 @@
 		}
 
 		public static void main(String[] args) {
-			Stack stack = new Stack();
+			myStack stack = new myStack();
 			stack.push(3);
 			System.out.println(stack.peek() == 3);
 			System.out.println(stack.pop());

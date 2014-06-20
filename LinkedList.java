@@ -1,5 +1,3 @@
-			// delete doesn't handle case where linkedlist has less than 3 elements
-
 			public class LinkedList {
 				Node head;
 
