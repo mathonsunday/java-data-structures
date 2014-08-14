@@ -1,24 +1,24 @@
 // TODO
 // add generics
 
-public class Queue {
+public class myQueue {
 	Node first;
 	Node last;
 
-	public Queue(Node first, Node last) {
+	public myQueue(Node first, Node last) {
 		this.first = first;
 		this.last = last;
 		first.next = last;
 	}
 
-	public Queue() {
+	public myQueue() {
 
 	}
 
 	public void enqueue(Object data) {
 		if( first == null ) {
-			last = new Node(data);
-			first = last;
+			first = new Node(data);
+			last = first;
 		} else {
 			last.next = new Node(data);
 			last = last.next;
@@ -37,12 +37,12 @@ public class Queue {
 	}
 
 	public static void main(String[] args) {
-		Queue queue = new Queue(new Node(2), new Node(3));
+		myQueue queue = new myQueue();
 		queue.enqueue(4);
 		queue.enqueue(5);
 
-		System.out.println(queue.dequeue() == 2);
-		System.out.println(queue.dequeue() == 3);
+		System.out.println(queue.dequeue() == 4);
+		System.out.println(queue.dequeue() == 5);
 	}
 
 	private static class Node {

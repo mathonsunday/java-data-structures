@@ -7,7 +7,6 @@
 		Object pop() {
 			if (top != null) {
 				Object item = top.data;
-				System.out.println(top.next);
 				top = top.next;
 				return item;
 			}

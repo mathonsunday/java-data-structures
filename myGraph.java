@@ -48,9 +48,9 @@
 		//BFS traversal of a tree is performed by the bfs() function
 		public void bfs() {
 			//BFS uses Queue data structure
-			Queue<Node> q=new LinkedList<Node>();
-			q.add(this.rootNode);
-			printNode(this.rootNode);
+			Queue<Node> q=new LinkedList<Node>(); // does this work correcntly as a queue?
+			q.add(rootNode);
+			printNode(rootNode);
 			rootNode.visited=true;
 			while(!q.isEmpty())
 			{
@@ -71,7 +71,7 @@
 		public void dfs() {
 			//DFS uses Stack data structure
 			Stack<Node> s=new Stack<Node>();
-			s.push(this.rootNode);
+			s.push(rootNode);
 			rootNode.visited=true;
 			printNode(rootNode);
 			while(!s.isEmpty())

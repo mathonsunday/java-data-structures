@@ -21,6 +21,7 @@
 				}
 
 				public void delete(int data) {
+					if(head == null) return;
 					Node current = head;
 
 					if(current.data == data) {
@@ -39,6 +40,7 @@
 
 				public static void main(String[] args) {
 					LinkedList linkedlist = new LinkedList();
+					linkedlist.delete(6);
 					linkedlist.appendToTail(3);
 					linkedlist.appendToTail(4);
 					linkedlist.appendToTail(5);
